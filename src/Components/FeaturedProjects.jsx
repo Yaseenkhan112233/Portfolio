@@ -2,7 +2,6 @@ import React from "react";
 import Project from "./Projects";
 
 function FeaturedProjects() {
-  console.log("Featured Projects");
   const projects = [
     {
       image: "../public/images/project1.jpg",
@@ -24,7 +23,6 @@ function FeaturedProjects() {
     },
     // Add more projects as needed
   ];
-  console.log(projects);
 
   return (
     <>
