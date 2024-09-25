@@ -1,0 +1,820 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* overflow: hidden; */
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+.header {
+  height: 6vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.headerName {
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-tags {
+  width: 20vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header-tags a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Menu icon styling */
+.menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Responsive design */
+
+@media (max-width: 1300px) {
+  .headerName {
+    margin-top: 3vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .headerName h2 {
+    /* margin-top: 3vh; */
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+  }
+}
+@media (max-width: 480px) {
+  .headerName h2 {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .header-tags {
+    display: none; /* Hide menu links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 6vh;
+    right: 0;
+    background-color: black;
+    width: 100vw;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .header-tags.open {
+    display: flex; /* Show menu links when menu is open */
+  }
+
+  .menu-icon {
+    display: block; /* Show menu icon */
+  }
+  .headerName {
+    margin-top: 3vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-tags a {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Hero section styling */
+.hero-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8vh 5vw;
+  background-color: black;
+  color: white;
+  /* height: 100vh; */
+  width: 100vw; /* Ensure it doesn't exceed viewport width */
+}
+
+/* Left text and content */
+.hero-left {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-left-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.animated-text {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInSlideUp 2s ease forwards;
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-p-b-a p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Right side image */
+.img {
+  background-image: url(assets/remove.png);
+  background-color: #c7c7c7;
+  background-size: cover;
+  background-position: unset;
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 30vw;
+  border-radius: 10px;
+  flex-shrink: 0;
+
+  /* Prevent image from shrinking */
+}
+
+/* Social icon styles */
+.linkedin,
+.github {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: #222222;
+  border-radius: 50%;
+  color: white;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .hero-main {
+    flex-direction: column-reverse; /* Stack content, image last */
+    align-items: center;
+    padding: 5vh 2vw;
+  }
+
+  .img {
+    width: 80vw;
+    height: 40vh; /* Ensure the image is visible and resizes correctly */
+    margin-bottom: 2rem;
+    background-size: contain; /* Ensure it fits within the container */
+    background-position: center;
+  }
+
+  .hero-left {
+    text-align: center;
+    padding: 0;
+  }
+
+  .hero-left-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-p-b-a p {
+    font-size: 1.1rem;
+  }
+
+  .btn-icon {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-main {
+    padding: 4vh 1.5vw;
+  }
+
+  .img {
+    width: 85vw;
+    height: 35vh; /* Adjust the height for smaller screens */
+  }
+
+  .hero-left-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-p-b-a p {
+    font-size: 1rem;
+  }
+
+  .btn-icon {
+    /* flex-direction: column; */
+    gap: 0.5rem;
+  }
+
+  .linkedin,
+  .github {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-main {
+    flex-direction: column-reverse; /* Stack content, image last */
+    padding: 3vh 1vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img {
+    width: 90vw; /* Set explicit width */
+    height: 40vh; /* Set explicit height */
+    margin-bottom: 2rem;
+    background-size: contain; /* Ensure the image fits properly */
+  }
+
+  .hero-left-text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .hero-p-b-a p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .btn-icon {
+    /* flex-direction: column; */
+    gap: 0.3rem;
+  }
+
+  .linkedin,
+  .github {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* +++++++++++++Featured Project Section+++++++++++ */
+
+.featured-projects {
+  background-color: black;
+  color: white;
+  padding: 2vh 5vw;
+  height: 10vh;
+  border-top: 0.5px solid white;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-projects {
+    padding: 4vh;
+    height: 15vh;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .featured-projects {
+    padding: 4vh 4vw;
+    height: 20vh;
+    font-size: 0.8rem;
+    border-top-width: 0.25px;
+  }
+}
+
+.main-Projects-div {
+  width: 100vw;
+  /* height: 100vh; */
+  height: 60vh;
+  background-color: black;
+  color: white;
+  display: flex;
+
+  padding: 8vh 5vw;
+  box-sizing: border-box;
+  /* border-bottom: 0.5px solid white; */
+}
+
+.Image-div {
+  height: auto;
+  height: 50vh;
+  width: 40vw;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image1 {
+  max-width: 100%;
+  max-height: 100%;
+  height: 35vh;
+  width: 25vw;
+  object-fit: cover;
+  border-radius: 10px;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .main-Projects-div {
+    flex-direction: column;
+    padding: 4vh 6vw;
+    height: auto;
+  }
+
+  .Image-div {
+    width: 70vw;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image1 {
+    height: auto;
+    height: 45vh;
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-Projects-div {
+    flex-direction: column;
+    padding: 2vh 3vw;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Image-div {
+    width: 90vw;
+    margin-bottom: 20px;
+  }
+
+  .image1 {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.about-project {
+  height: auto;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  padding: 1rem;
+
+  transition: opacity 0.9s ease-in-out;
+}
+
+.inner-about-project {
+  width: 100%;
+}
+
+.inner-about-project-h2 {
+  color: white;
+  width: 100%;
+
+  transition: color 0.3s ease;
+}
+
+.inner-about-project-p {
+  width: 100%;
+
+  transition: color 0.3s ease;
+}
+
+.bottomline {
+  border-bottom: 0.5px solid white;
+  width: 100%;
+  margin: 1rem 0;
+  transition: border-color 0.3s ease;
+}
+
+.year,
+.Role {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.see-on-github {
+  display: flex;
+  transition: color 0.3s ease;
+}
+
+.see-on-github a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.7rem;
+  padding-top: 6px;
+}
+
+.see-on-github p {
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project {
+    width: 80vw;
+  }
+
+  .inner-about-project {
+    width: 90%;
+  }
+
+  .inner-about-project-h2,
+  .inner-about-project-p {
+    width: 100%;
+  }
+
+  .bottomline,
+  .year,
+  .Role {
+    width: 90%;
+  }
+
+  .see-on-github a {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-project {
+    width: 90vw;
+  }
+
+  .inner-about-project {
+    width: 100%;
+  }
+
+  .inner-about-project-h2,
+  .inner-about-project-p {
+    width: 100%;
+  }
+
+  .bottomline,
+  .year,
+  .Role {
+    width: 100%;
+  }
+
+  .see-on-github a {
+    font-size: 1rem;
+  }
+}
+
+/* +++++++++++++++++++++About ME+++++++++++++++++++++++++++++++/ */
+/* .about-Main-div {
+  background-color: black;
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  padding: 8vh 5vw;
+}
+.aboutme-text {
+  height: 20vh;
+  width: 34vh;
+  font-family: "Bebas Neue", sans-serif;
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+.aboutme-text h1 {
+  font-size: 70px;
+}
+.aboutme-paragrapgh {
+  background-color: black;
+  height: 20vh;
+  width: 60vw;
+  color: white;
+  padding: 0vh 1vw;
+}
+.aboutme-paragrapgh h4 {
+  font-size: 20px;
+}
+.about-large-text {
+  font-size: 30px;
+  width: 35vw;
+}
+.about-large-text h4 {
+  font-size: 25px;
+}
+.about-para p {
+  font-size: 12px;
+} */
+
+.about-Main-div {
+  background-color: black;
+  height: auto; /* Allow height to adjust based on content */
+  width: 100vw;
+  display: flex;
+  padding: 8vh 5vw;
+  flex-direction: row; /* Ensure the layout stays in a row */
+  /* border-top: 0.5px solid white; */
+}
+
+.aboutme-text {
+  height: auto; /* Adjust height for responsiveness */
+  width: 84vh; /* Maintain width for larger screens */
+  font-family: "Bebas Neue", sans-serif;
+  display: flex;
+  color: white;
+  /* justify-content: center; */
+}
+
+.aboutme-text h1 {
+  font-size: 70px; /* Adjust as needed */
+}
+
+.aboutme-paragrapgh {
+  background-color: black;
+  height: auto; /* Allow height to adjust based on content */
+  width: 60vw; /* Adjust width for responsiveness */
+  color: white;
+  padding: 0vh 1vw;
+}
+
+.aboutme-paragrapgh h4 {
+  font-size: 20px; /* Adjust font size as needed */
+}
+
+.about-large-text {
+  font-size: 30px; /* Adjust font size for larger screens */
+  width: 35vw; /* Maintain width */
+}
+
+.about-large-text h4 {
+  font-size: 25px; /* Maintain font size */
+}
+
+.about-para p {
+  font-size: 12px; /* Maintain font size */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .about-Main-div {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 4vh 3vw; /* Adjust padding for smaller screens */
+  }
+
+  .aboutme-text {
+    width: 80vw; /* Adjust width for smaller screens */
+    text-align: center; /* Center align text */
+  }
+
+  .aboutme-text h1 {
+    font-size: 50px; /* Smaller font size for h1 */
+  }
+
+  .aboutme-paragrapgh {
+    width: 80vw; /* Adjust width */
+  }
+
+  .aboutme-paragrapgh h4 {
+    font-size: 18px; /* Smaller font size for h4 */
+  }
+
+  .about-large-text {
+    font-size: 24px; /* Smaller font size */
+    width: 90vw; /* Adjust width */
+  }
+
+  .about-large-text h4 {
+    font-size: 22px; /* Smaller font size */
+  }
+
+  .about-para p {
+    font-size: 10px; /* Smaller font size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-Main-div {
+    padding: 2vh 2vw; /* Further adjust padding */
+  }
+
+  .aboutme-text {
+    width: 90vw; /* Full width for mobile */
+  }
+
+  .aboutme-text h1 {
+    font-size: 30px; /* Further decrease font size */
+  }
+
+  .aboutme-paragrapgh {
+    width: 90vw; /* Full width for mobile */
+  }
+
+  .aboutme-paragrapgh h4 {
+    font-size: 16px; /* Smaller font size for h4 */
+  }
+
+  .about-large-text {
+    font-size: 20px; /* Smaller font size */
+  }
+
+  .about-large-text h4 {
+    font-size: 18px; /* Smaller font size */
+  }
+
+  .about-para p {
+    font-size: 9px; /* Smaller font size */
+  }
+}
+.about-para a {
+  /* text-decoration: none; */
+  color: white;
+}
+
+/* =++++++++++++++++++++++++contact+++++++~~~~~~~~~~~~~~~~ */
+
+.main-contact-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  background-color: black;
+  color: white;
+}
+
+.right-main-contact-div {
+  flex: 1;
+  padding: 20px;
+  font-family: "Bebas Neue", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  height: 70vh;
+  padding: 8vh 3vw;
+}
+
+.connect h1 {
+  /* font-size: 2rem; */
+  margin-bottom: 10px;
+  font-size: 68px;
+}
+.anchors {
+  display: flex;
+}
+
+.right-main-contact-div p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.right-main-contact-div a {
+  /* font-size: 2rem; */
+  /* color: #1a1a1a; */
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.right-main-contact-div a:hover {
+  color: #0077b5; /* LinkedIn Blue */
+}
+
+/* General Form Styling */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+.contact-form {
+  width: 70vw;
+  max-width: 600px;
+  /* background-color: #f9f9f9; */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #1a1a1a; /* Dark background */
+  color: #fff; /* White text color */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #ccc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #888;
+}
+
+textarea {
+  resize: vertical; /* Allow textarea resizing only vertically */
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
